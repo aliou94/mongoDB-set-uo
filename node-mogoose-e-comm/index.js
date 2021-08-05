@@ -18,7 +18,22 @@ connect.then(() => {
     })
     .then(product => {
         console.log(product);
-        return Products.find();
+        return Products.findByIdAndUpdate(product._id, {
+            $set: { description: 'Updated Test Document' }
+        }, {
+            new: true
+        });
+    })
+    .then(product => {
+        console.log(product);
+
+        product.comments.push({
+            rating: 5,
+            text: 'Bets phone one earth',
+            author: 'Tinus Lorvaldes'
+        });
+
+        return Products.save();
     })
     .then(product  => {
         console.log(product);
