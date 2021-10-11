@@ -1,0 +1,5 @@
+start my server :mongod --dbpath=data
+
+appID facebook : 849929905658247
+
+app secrete : a6f7f67f7fe67c1dea62bd1e327df063
